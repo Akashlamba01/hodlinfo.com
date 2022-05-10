@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hodlinfo.com</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/8ff5f3e8e1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="nav-bar">
+      <span class="logo">
+        <a href="#">
+          <h2>HODLINFO <small>.com</small></h2>
+          <p class="logo-desc">Powered By <span class="desc">Finstreet</span></p>
+        </a>
+      </span>
+      <span class="drop1">
+        <select id="dropdown1">
+          <option>BTC</option>
+          <option style="color:black">XRP</option>
+          <option style="color:black">ETH</option>
+          <option style="color:black">TRX</option>
+        </select>
+      </span>
+      <span class="drop2">
+        <select id="dropdown2">
+          <option>INR</option>
+        </select>
+      </span>
+      <div class="menu-right">
+        <!-- <span onclick="togglebar()">
+                    <i class="fas fa-bars"></i>
+                </span> -->
+        <ul id="menu">
+          <li> <span class="right-num">58</span></li>
+          <li> <a type="button" href="https://telegram.org/" class="telegram-id"><i
+                class="fab fa-telegram-plane"></i>Connect telegram</a></li>
+          <li><label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!--Inclusion of header file i.e navbar-->
+  <%- include("header")%>
+    <!--Table for displaying values -->
+    <div class="box">
+      <table cellspacing="0">
+        <th class="nothing">#</th>
+        <th>Name</th>
+        <th>Last</th>
+        <th>Buy/Sell price</th>
+        <th class="nothing">Volume</th>
+        <th class="nothing">Base_Unit</th>
+        <% for(var i=0;i<10;i++){ %>
+          <tr style="background-color:grey;" cell-spacing:0;>
+            <td class="nothing">
+              <%=i+1%>
+            </td>
+            <td>
+              <%= data[keys[i]].name %>
+            </td>
+            <td>
+              <%= data[keys[i]].last %>
+            </td>
+            <td>
+              <%= data[keys[i]].buy %>/<%= data[keys[i]].sell %>
+            </td>
+            <td class="nothing">
+              <%= data[keys[i]].volume %>
+            </td>
+            <td class="nothing">
+              <%= data[keys[i]].base_unit %>
+            </td>
+          </tr>
+          <%}%>
+      </table>
+    </div>
+</body>
+
+</html>
+
+</body>
