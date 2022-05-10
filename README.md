@@ -1,3 +1,3 @@
 HODLINFO API
 
-This is a crypto currency values from wazirx API. 
+This is a crypto currency API using wazirx real-time API. 
